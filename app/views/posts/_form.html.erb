@@ -1,0 +1,14 @@
+<h1>New Post</h1>
+
+<%= form_for @post do |f| %>
+  <%= f.label :message %>
+  <%= f.text_field :message %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date, :value => Date.current %>
+
+  <%= f.submit %>
+<% end %>
