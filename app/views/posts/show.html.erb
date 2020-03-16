@@ -5,3 +5,8 @@
 <ul>
   <li>Caption: <%= @post.message %></li>
 </ul>
+
+<div class="controls">
+  <%= link_to 'Edit Post', edit_post_path(@post) %>
+  <%= link_to "Delete Post", @post, :method => 'delete' %>
+</div>
