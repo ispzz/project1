@@ -1,4 +1,4 @@
-<h1><%= @post.date %></h1>
+<h1><%= @post.date.strftime '%a, %b %e' %></h1>
 
 <%= image_tag @post.image, :class => 'feature', :alt => @post.id %>
 
