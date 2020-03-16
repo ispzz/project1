@@ -16,6 +16,7 @@
       <% if @current_user.present? %>
           <%= link_to "all posts", posts_path %>
           <%= link_to "new post", new_post_path %>
+          <%= link_to "My profile", user_path(@current_user) %>
           <%= link_to "sign out", login_path, :method => 'delete' %>
         <% else %>
           <%= link_to "sign up", new_user_path %>

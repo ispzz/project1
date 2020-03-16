@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :check_for_login, :only => [:show]
+
+  def show
+    @user = User.find params[:id]
+  end
+
   def new
     @user = User.new
   end
