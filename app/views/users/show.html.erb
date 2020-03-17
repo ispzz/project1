@@ -1,11 +1,9 @@
 <%= image_tag @user.image, :class => 'feature' if @user.image.present? %>
 <h1><%= @user.name %></h1>
 
-
-<!-- <div class="controls">
-  <%# <%= link_to 'Edit user', edit_user_path(@user) %> %>
-  <%# <%= link_to "Delete #{@user.name}", @user, :method => 'delete' %> %>
-</div> -->
+<div class="controls">
+  <%= link_to 'Edit user', edit_user_path(@user) %>
+</div>
 
 <% @user.posts.each do |post| %>
   <%= link_to image_tag(post.image, :class => 'thumb'), post %>
