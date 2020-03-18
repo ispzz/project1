@@ -6,14 +6,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create post_params
-    @current_user.posts << post
-    if params[:file].present?
-      req = Cloudinary::Uploader.upload(params[:file])
-      post.image = req["public_id"]
-      post.save
+    @post = Post.new post_params
+    if @post.save
+      @current_user.posts << @post
+      if params[:file].present?
+        req = Cloudinary::Uploader.upload(params[:file])
+        @post.image = req["public_id"]
+        @post.save
+      end
+      redirect_to @post
+    else
+      render :new
     end
-    redirect_to post
   end
 
   def show
