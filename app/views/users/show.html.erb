@@ -7,6 +7,7 @@
 
 <%= month_calendar events: @posts do |date, posts| %>
   <%= date.day %>
+  <%= link_to "new post", new_post_path %>
 
   <% posts.each do |post| %>
     <div>
