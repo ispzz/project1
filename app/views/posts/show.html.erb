@@ -1,6 +1,8 @@
 <h1><%= @post.date.strftime '%a, %b %e' %></h1>
 
-<%= image_tag @post.image, :class => 'feature', :alt => @post.id %>
+<div class="feature">
+  <%= cl_image_tag(@post.image) %>
+</div>
 
 <ul>
   <li>Caption: <%= @post.message %></li>

@@ -1,20 +1,14 @@
 <%= image_tag @user.image, :class => 'feature' if @user.image.present? %>
 <h1><%= @user.name %></h1>
 
-<div class="controls">
-  <%= link_to 'Edit user', edit_user_path(@user) %>
-</div>
+  <div class="controls">
+    <%= link_to 'Edit user', edit_user_path(@user) %>
+  </div>
 
 <% @user.posts.each do |post| %>
-  <%= link_to image_tag(post.image, :class => 'thumb'), post %>
+    <%= link_to cl_image_tag(post.image), post %>
 <% end %>
 
-<%= month_calendar events: @meetings do |date, meetings| %>
-  <%= date %>
-
-  <% meetings.each do |meeting| %>
-    <div>
-      <%= meeting.name %>
-    </div>
-  <% end %>
+<%= month_calendar do |date| %>
+  <%= date.day %>
 <% end %>

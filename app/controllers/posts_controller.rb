@@ -8,11 +8,17 @@ class PostsController < ApplicationController
   def create
     post = Post.create post_params
     @current_user.posts << post
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      post.image = req["public_id"]
+      post.save
+    end
     redirect_to post
   end
 
   def show
-    @post= Post.find params[:id]
+    @post = Post.find params[:id]
+
   end
 
   def edit
@@ -21,7 +27,12 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find params[:id]
-    post.update post_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      post.image = req["public_id"]
+    end
+    post.update_attributes(post_params)
+    post.save
     redirect_to post
   end
 
@@ -37,6 +48,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:message, :image, :date)
+    params.require(:post).permit(:message, :date)
   end
 end
