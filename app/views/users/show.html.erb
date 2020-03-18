@@ -10,7 +10,7 @@
 
   <% posts.each do |post| %>
     <div>
-      <%= link_to cl_image_tag(post.image), post %>
+      <%= link_to cl_image_tag(post.image, :width=>150, :crop=>"crop"), post %>
     </div>
   <% end %>
 <% end %>
