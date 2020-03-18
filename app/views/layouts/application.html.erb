@@ -7,10 +7,11 @@
     <%= cloudinary_js_config %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
   </head>
 
   <body>
+
+  <div class="container">
     <nav>
       <%= link_to "home", root_path %>
       <% if @current_user.present? %>
@@ -26,6 +27,9 @@
     </nav>
 
     <%= yield %>
+  </div>
+
+
 
   </body>
 </html>

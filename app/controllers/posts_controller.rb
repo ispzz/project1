@@ -6,17 +6,23 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new post_params
-    if @post.save
-      @current_user.posts << @post
-      if params[:file].present?
-        req = Cloudinary::Uploader.upload(params[:file])
-        @post.image = req["public_id"]
-        @post.save
+    
+    if params[:post][:message].present? || params[:file].present?
+      @post = Post.new post_params
+      if @post.save
+        @current_user.posts << @post
+        if params[:file].present?
+          req = Cloudinary::Uploader.upload(params[:file])
+          @post.image = req["public_id"]
+          @post.save
+        end
+        redirect_to @post
+      else
+        render :new
       end
-      redirect_to @post
     else
-      render :new
+      flash[:error] = "message or image"
+      redirect_to new_post_path
     end
   end
 
