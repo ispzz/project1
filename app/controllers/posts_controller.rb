@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    
+
     if params[:post][:message].present? || params[:file].present?
       @post = Post.new post_params
       if @post.save
@@ -58,6 +58,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:message, :date)
+    params.require(:post).permit(:message, :date, :start_time)
   end
 end

@@ -5,10 +5,12 @@
     <%= link_to 'Edit user', edit_user_path(@user) %>
   </div>
 
-<% @user.posts.each do |post| %>
-    <%= link_to cl_image_tag(post.image), post %>
-<% end %>
-
-<%= month_calendar do |date| %>
+<%= month_calendar events: @posts do |date, posts| %>
   <%= date.day %>
+
+  <% posts.each do |post| %>
+    <div>
+      <%= link_to cl_image_tag(post.image), post %>
+    </div>
+  <% end %>
 <% end %>

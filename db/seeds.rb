@@ -4,8 +4,8 @@ u2 = User.create :email => 'boots@ga.co', :name => 'Boots', :image => 'http://pl
 puts "#{User.count} users were created."
 
 Post.destroy_all
-p1 = Post.create :message => 'first post lol', :image => 'http://placekitten.com/300/300', :date => '2020-3-14'
-p2 = Post.create :message => 'new day', :image => 'http://placekitten.com/300/400', :date => '2020-3-15'
+p1 = Post.create :message => 'first post lol', :image => 'http://placekitten.com/300/300', :date => '2020-3-16', :start_time => DateTime.new(2020,3,16,17)
+p2 = Post.create :message => 'new day', :image => 'http://placekitten.com/300/400', :date => '2020-3-15', :start_time => DateTime.new(2020,3,15,17)
 puts "#{Post.count} posts created."
 
 # ASSOCIATIONS
