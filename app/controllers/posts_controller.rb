@@ -21,7 +21,7 @@ class PostsController < ApplicationController
         render :new
       end
     else
-      flash[:error] = "message or image"
+      flash[:error] = "You need to provide and image OR a caption"
       redirect_to new_post_path
     end
   end

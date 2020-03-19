@@ -1,14 +1,16 @@
-<h1><%= @post.start_time.strftime '%a, %b %e' %></h1>
+<div class="container">
+  <h1><%= @post.start_time.strftime '%a, %b %e' %></h1>
 
-<div class="feature">
-  <%= cl_image_tag(@post.image) %>
-</div>
+  <div class="feature">
+    <%= cl_image_tag(@post.image) %>
+  </div>
 
-<ul>
-  <li>Caption: <%= @post.message %></li>
-</ul>
+  <ul>
+    <li>Caption: <%= @post.message %></li>
+  </ul>
 
-<div class="controls">
-  <%= link_to 'Edit Post', edit_post_path(@post) %>
-  <%= link_to "Delete Post", @post, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  <div class="controls">
+    <%= link_to 'Edit Post', edit_post_path(@post) %>
+    <%= link_to "Delete Post", @post, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  </div>
 </div>

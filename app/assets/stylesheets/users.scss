@@ -7,26 +7,41 @@
 
 body {
   padding-top: 100px;
-  background-color: rgba(216, 244, 255, 0);
+  background: linear-gradient(90deg, rgba(221,208,212,1) 0%, rgba(219,211,236,1) 100%);
 }
+
 @media (max-width: 979px) {
   body {
     padding-top: 0px;
   }
 }
 
+.img-fluid {
+  padding-top: 30px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 3em;
+}
+
 nav {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-bottom: 5px solid rgba(255, 223, 214, 0.9);
-  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom: 0.3em solid rgba(230, 232, 258, 1);
+  border-radius: 2em;
+  margin: 10px;
 }
 
 .navbar a {
     color: black;
 }
 
+.navbar a:hover {
+    text-shadow: blue;
+}
+
 #show-username {
-  border-bottom: 5px solid rgba(255, 223, 214, 0.9);
+  border-bottom: 0.1em solid rgba(230, 232, 258, 1);
   padding-top: 0.2em;
   padding-bottom: 0.9em;
   letter-spacing: 0.2em;
@@ -36,8 +51,7 @@ nav {
   table {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
-    background-color: rgba(216, 244, 255, 0);
-    border: 1px solid rgb(221, 221, 221);
+    background-color: rgba(255, 255, 255, 0.9);
     border-collapse: collapse;
     border-radius: 1em;
     border-style: hidden;
@@ -49,10 +63,12 @@ nav {
 
   .calendar-heading {
     text-align: center;
+    padding: 0.3em;
   }
 
   .calendar-title {
     font-size: 1.2em;
+    padding: 1em;
   }
 
   tr {
@@ -60,7 +76,7 @@ nav {
   }
 
   th {
-    padding: 6px;
+    padding: 10px;
     border-bottom: 2px solid rgb(221, 221, 221);
     border-collapse: collapse;
     border-left: 1px solid rgb(221, 221, 221);
@@ -71,7 +87,7 @@ nav {
   }
 
   td {
-    padding: 6px;
+    padding: 10px;
     vertical-align: top;
     width: 14%;
 
@@ -112,10 +128,8 @@ nav {
   .start-date {}
 
   .prev-month {
-    background: #DDD;
   }
   .next-month {
-    background: #DDD;
   }
   .current-month {}
 

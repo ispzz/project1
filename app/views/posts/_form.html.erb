@@ -1,16 +1,24 @@
 <% if flash[:error].present? %>
-  <h2><%= flash[:error] %></h2>
+  <div class="alert alert-warning" role="alert">
+  <h5><%= flash[:error] %></h5>
+  </div>
 <% end %>
 
 <%= form_for(@post, :html => {:multipart => true}) do |f| %>
-  <%= f.label :message %>
-  <%= f.text_field :message %>
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_field :message, :class => 'form-control' %>
+  </div>
 
-  <%= f.label "Image: " %>
-  <%= f.cl_image_upload :image %>
+  <div class="form-group">
+    <%= f.label "Image: " %>
+    <%= f.cl_image_upload :image, :class => 'form-control' %>
+  </div>
 
-  <%= f.label :date %>
-  <%= f.date_field :start_time, :value => Date.current %>
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_field :start_time, :value => Date.current, :class => 'form-control' %>
+  </div>
 
-  <%= f.submit %>
+  <%= f.submit "Confirm", :class => 'btn btn-success btn-lg btn-block' %>
 <% end %>

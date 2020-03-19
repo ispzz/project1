@@ -1,5 +1,17 @@
 <% if flash[:notice].present? %>
-  <h2><%= flash[:notice] %></h2>
+  <div class="alert alert-warning" role="alert">
+  <h5><%= flash[:notice] %></h5>
+  </div>
+<% end %>
+
+<% if @user.errors.any? %>
+  <div class="alert alert-warning" role="alert">
+    <ol>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ol>
+  </div>
 <% end %>
 
 <%= form_for(@user, :html => {:multipart => true}) do |f| %>
@@ -28,6 +40,6 @@
     <%= f.password_field :password_confirmation, :required => true, :class => 'form-control' %>
   </div>
 
-  <%= f.submit "Sign Up!!", :class => 'btn btn-success btn-lg' %>
+  <%= f.submit "Confirm", :class => 'btn btn-success btn-lg btn-block' %>
 
 <% end %>

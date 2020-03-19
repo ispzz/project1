@@ -1,15 +1,17 @@
-<%= cl_image_tag(@user.image, :transformation=>[
-  {:width=>400, :height=>400, :radius=>"max", :crop=>"crop"},
-  {:width=>150, :crop=>"scale"}], :class => "img-fluid d-block mx-auto") if @user.image.present? %>
-<h1 class="text-center" id="show-username"><%= @user.name %></h1>
+<div class="container">
+  <%= cl_image_tag(@user.image, :transformation=>[
+    {:width=>400, :height=>400, :radius=>"max", :crop=>"crop"},
+    {:width=>150, :crop=>"scale"}], :class => "img-fluid d-block mx-auto") if @user.image.present? %>
+  <h1 class="text-center" id="show-username"><%= @user.name %></h1>
 
-<%= month_calendar events: @posts do |date, posts| %>
-  <%= date.day %>
-  <%# <%= link_to "new post", new_post_path %>
+  <%= month_calendar events: @posts do |date, posts| %>
+    <%= date.day %>
+    <%# <%= link_to "new post", new_post_path %>
 
-  <% posts.each do |post| %>
-    <div>
-      <%= link_to cl_image_tag(post.image, :width=>150, :height=>150, :crop=>"crop"), post %>
-    </div>
+    <% posts.each do |post| %>
+      <div>
+        <%= link_to cl_image_tag(post.image, :width=>150, :height=>150, :crop=>"crop"), post %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
