@@ -1,8 +1,7 @@
 <div class="container">
-  <div class="thumb">
+  <div class="row mx-auto">
     <% @posts.each do |post| %>
       <%= cl_image_tag(post.image) %>
     <% end %>
   </div>
-
 </div>

@@ -1,16 +1,18 @@
 <div class="container">
-  <h1><%= @post.start_time.strftime '%a, %b %e' %></h1>
+  <div class="mx-auto">
+    <h1 class="text-center"><%= @post.start_time.strftime '%a, %b %e' %></h1>
 
-  <div class="feature">
-    <%= cl_image_tag(@post.image) %>
-  </div>
+    <div class="feature">
+      <%= cl_image_tag(@post.image, :class => "img-fluid d-block mx-auto") %>
+    </div>
 
-  <ul>
-    <li>Caption: <%= @post.message %></li>
-  </ul>
+    <div class="text-center" id="caption">
+      <h3><%= @post.message %></h3>
+    </div>
 
-  <div class="controls">
-    <%= link_to 'Edit Post', edit_post_path(@post) %>
-    <%= link_to "Delete Post", @post, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    <div class="text-center">
+      <%= link_to 'Edit Post', edit_post_path(@post), :class => "btn btn-success" %>
+      <%= link_to "Delete Post", @post, :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger" %>
+    </div>
   </div>
 </div>
