@@ -1,6 +1,6 @@
 <%= cl_image_tag(@user.image, :transformation=>[
   {:width=>400, :height=>400, :radius=>"max", :crop=>"crop"},
-  {:width=>200, :crop=>"scale"}]) if @user.image.present? %>
+  {:width=>200, :crop=>"scale"}], :class => "img-fluid d-block mx-auto") if @user.image.present? %>
 <h1><%= @user.name %></h1>
 
   <div class="controls">
