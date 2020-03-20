@@ -8,7 +8,7 @@ p1 = Post.create :message => 'first post lol', :image => 'http://placekitten.com
 p2 = Post.create :message => 'new day', :image => 'http://placekitten.com/300/400', :start_time => DateTime.new(2020,3,15,17)
 puts "#{Post.count} posts created."
 
-# ASSOCIATIONS
+# ASSOCIATIONS #
 puts "Posts"
 u1.posts << p2
 u2.posts << p1

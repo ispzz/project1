@@ -1,6 +1,6 @@
 <% if flash[:notice].present? %>
   <div class="alert alert-warning" role="alert">
-  <h5><%= flash[:notice] %></h5>
+    <h5><%= flash[:notice] %></h5>
   </div>
 <% end %>
 
@@ -8,7 +8,7 @@
   <div class="alert alert-warning" role="alert">
     <ol>
       <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+        <li><%= msg %></li>
       <% end %>
     </ol>
   </div>

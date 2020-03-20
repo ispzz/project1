@@ -1,14 +1,14 @@
 <div class="welcome-container" id="home-cont">
   <div class="welcome-two">
-  <h1 class="text-center">WELCOME</h1>
-  <img src="/assets/front-page.png" alt="diary-calendar" class="logo-img">
-    <% if @current_user.present? %>
-    <h1>
-      Already Logged in <%= @current_user.name %>
-    </h1>
-    <% else %>
-          <%= link_to "Sign up ?", new_user_path, :class => "btn btn-primary" %>
-          <%= link_to "Login ?", login_path, :class => "btn btn-success" %>
-    <% end %>
-    </div>
+    <h1 class="text-center">WELCOME</h1>
+    <img src="/assets/front-page.png" alt="diary-calendar" class="logo-img">
+      <% if @current_user.present? %>
+        <h1>
+          Already Logged in <%= @current_user.name %>
+        </h1>
+      <% else %>
+        <%= link_to "Sign up ?", new_user_path, :class => "btn btn-primary" %>
+        <%= link_to "Login ?", login_path, :class => "btn btn-success" %>
+      <% end %>
+  </div>
 </div>

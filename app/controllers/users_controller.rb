@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    @posts = Post.all
+    @posts = Post.all # POSTS IN CALENDAR
   end
 
   def new

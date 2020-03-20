@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   end
 
   def create
-
     if params[:post][:message].present? || params[:file].present?
       @post = Post.new post_params
       if @post.save
@@ -28,7 +27,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
-
   end
 
   def edit
